@@ -28,7 +28,7 @@ namespace ConnectFour
                     btn[x, y].SetBounds(60 * x, 60 * y, 50, 50); //sets size
                     btn[x, y].BackColor = Color.DarkBlue;
                     btn[x, y].Text = Convert.ToString((x + 1) + "," + (y + 1)); //adds co-ordinates as text
-                    btn[x, y].Font = new Font(Font.Name, 8, Font.Style); //makes the co-ordinate text hidden
+                    btn[x, y].Font = new Font(Font.Name, 1, Font.Style); //makes the co-ordinate text hidden
                     btn[x, y].ForeColor = Color.DarkBlue; //makes the co-ordinate text hidden
                     btn[x, y].FlatStyle = FlatStyle.Flat;
 
