@@ -13,6 +13,7 @@ namespace ConnectFour
     public partial class ConnectFour : Form
     {   
         Button[,] btn = new Button[7, 6]; //2d array of buttons for grid
+        int filledCollumns = 0; //to keep track moves available incase the board is filled up with no winner
         public ConnectFour()
         {
             InitializeComponent();
@@ -58,6 +59,7 @@ namespace ConnectFour
             {
                 //change button color
 
+                //check for win (four in a row in any direction)
 
                 //make button above button pressed change colour to show a new available move
                 string grdXY = ((Button)sender).Text;
@@ -70,6 +72,19 @@ namespace ConnectFour
                     btn[(toChangeX), (toChangeY - 1)].BackColor = Color.Turquoise;
                     btn[(toChangeX), (toChangeY - 1)].ForeColor = Color.Turquoise;
                 }
+                else //collumn where player placed a piece is now full
+                {
+                    filledCollumns++;
+                    if (filledCollumns == 7)  //all collumns are filled
+                    {
+                        //end game with no winner
+                        DialogResult result;
+                        result = MessageBox.Show("No valid moves left, the game is tied. Game will now close", "No Moves Left", MessageBoxButtons.OK, MessageBoxIcon.None);
+                        Close();
+                    }
+                }
+                    
+
             }
             
         }
