@@ -107,11 +107,7 @@ namespace ConnectFour
                         Close();
                     }
                 }
-
-         
-      }
-
-            
+            }
         }
 
 
