@@ -65,8 +65,8 @@ namespace ConnectFour
         //function to change the colour of a valid button, only to be called after a button is clicked
         void colourChange(object sender)
         {           
-            if (((Button)sender).BackColor == Color.BlueViolet) //if it is a valid move in the game context
-            {
+           // if (((Button)sender).BackColor == Color.BlueViolet) //if it is a valid move in the game context
+            //{
                 if (redTurn == true) //when it is red players turn, button is changed to red
                 {
                     ((Button)sender).BackColor = Color.Red;
@@ -79,13 +79,13 @@ namespace ConnectFour
                     ((Button)sender).ForeColor = Color.Yellow;
                 }
                 redTurn = !redTurn; //changes to the other players turn  
-            }
+         //   }
         }
 
 
         void btnEvent_Click(object sender, EventArgs e)
         {  
-            if (((Button)sender).BackColor == Color.BlueViolet )
+            if (((Button)sender).BackColor == Color.BlueViolet || ((Button)sender).BackColor == Color.PaleVioletRed || ((Button)sender).BackColor == Color.PaleGoldenrod)
             {
                 //button colour is changed to appropriate colour and turn is changed
                 colourChange((Button)sender);
@@ -123,8 +123,17 @@ namespace ConnectFour
         {
             if (((Button)sender).BackColor == Color.Turquoise)
             {
-                ((Button)sender).BackColor = Color.BlueViolet;
-                ((Button)sender).ForeColor = Color.BlueViolet;
+                if (redTurn == true)
+                {
+
+                    ((Button)sender).BackColor = Color.PaleVioletRed;
+                    ((Button)sender).ForeColor = Color.PaleVioletRed;
+                }
+                else
+                {
+                    ((Button)sender).BackColor = Color.PaleGoldenrod;
+                    ((Button)sender).ForeColor = Color.PaleGoldenrod;
+                }
             }
         }
 
@@ -135,7 +144,19 @@ namespace ConnectFour
                 ((Button)sender).BackColor = Color.Turquoise;
                 ((Button)sender).ForeColor = Color.Turquoise;
             }
+            if (((Button)sender).BackColor == Color.PaleVioletRed)
+            {
+                ((Button)sender).BackColor = Color.Turquoise;
+                ((Button)sender).ForeColor = Color.Turquoise;
+            }
+            if (((Button)sender).BackColor == Color.PaleGoldenrod)
+            { 
+            
+                ((Button)sender).BackColor = Color.Turquoise;
+                ((Button)sender).ForeColor = Color.Turquoise;
+            }
         }
+
 
         private void ConnectFour_Load(object sender, EventArgs e)
         {
