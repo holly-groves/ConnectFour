@@ -12,11 +12,16 @@ namespace ConnectFour
 {
     public partial class ConnectFour : Form
     {   
+
         Button[,] btn = new Button[7, 6]; //2d array of buttons for grid
+
+        //boolean variable to be accesed throughout to determine which players turn it is
+        public static bool redTurn = true;
+
         public ConnectFour()
         {
             InitializeComponent();
-
+            
             //initalise grid
             for (int x = 0; x < 7; x++)
             {
@@ -50,14 +55,33 @@ namespace ConnectFour
                 btn[x, 5].ForeColor = Color.Turquoise;
             }
         }
+        //function to change the colour of a valid button, only to be called after a button is clicked
+        void colourChange(object sender)
+        {           
+            if (((Button)sender).BackColor == Color.BlueViolet) //if it is a valid move in the game context
+            {
+                if (redTurn == true) //when it is red players turn, button is changed to red
+                {
+                    ((Button)sender).BackColor = Color.Red;
+                    ((Button)sender).ForeColor = Color.Red;
+                }
+         
+                else //if it is yellow players turn then change button to yellow
+                {
+                    ((Button)sender).BackColor = Color.Yellow;
+                    ((Button)sender).ForeColor = Color.Yellow;
+                }
+                redTurn = !redTurn; //changes to the other players turn  
+            }
+        }
+
 
         void btnEvent_Click(object sender, EventArgs e)
-        {
-           
-            if (((Button)sender).BackColor == Color.BlueViolet)
+        {  
+            if (((Button)sender).BackColor == Color.BlueViolet )
             {
-                //change button color
-
+                //button colour is changed to appropriate colour and turn is changed
+                colourChange((Button)sender);
 
                 //make button above button pressed change colour to show a new available move
                 string grdXY = ((Button)sender).Text;
@@ -73,6 +97,8 @@ namespace ConnectFour
             }
             
         }
+
+
 
         void btnEvent_MouseEnter(object sender, EventArgs e)
         {
