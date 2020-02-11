@@ -13,16 +13,21 @@ namespace ConnectFour
     public partial class ConnectFour : Form
     {   
 
+         
         Button[,] btn = new Button[7, 6]; //2d array of buttons for grid
-        int filledCollumns = 0; //to keep track moves available incase the board is filled up with no winner
+        int filledCollumns; //to keep track moves available incase the board is filled up with no winner
 
 
         //boolean variable to be accesed throughout to determine which players turn it is
-        public static bool redTurn = true;
+        bool redTurn;
+ 
         public ConnectFour()
         {
             InitializeComponent();
-            
+
+            filledCollumns = 0;
+            redTurn = true;
+               
             //initalise grid
             for (int x = 0; x < 7; x++)
             {
@@ -56,6 +61,7 @@ namespace ConnectFour
                 btn[x, 5].ForeColor = Color.Turquoise;
             }
         }
+
         //function to change the colour of a valid button, only to be called after a button is clicked
         void colourChange(object sender)
         {           
@@ -103,8 +109,9 @@ namespace ConnectFour
                     {
                         //end game with no winner
                         DialogResult result;
-                        result = MessageBox.Show("No valid moves left, the game is tied. Game will now close", "No Moves Left", MessageBoxButtons.OK, MessageBoxIcon.None);
-                        Close();
+                        result = MessageBox.Show("No valid moves left, the game is tied.", "No Moves Left", MessageBoxButtons.OK, MessageBoxIcon.None);
+                        btnPlayAgain.Visible = true; //makes play again button visible
+                        
                     }
                 }
             }
@@ -133,6 +140,26 @@ namespace ConnectFour
         private void ConnectFour_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnPlayAgain_Click(object sender, EventArgs e)
+        {   
+            //reset game variables
+            filledCollumns = 0;
+            redTurn = true;
+
+            //reset the button colours
+            for (int x = 0; x < 7; x++)
+            {
+                for (int y = 0; y < 6; y++)
+                {
+                    btn[x, y].BackColor = Color.DarkBlue;
+                    btn[x, y].ForeColor = Color.DarkBlue; //makes the co-ordinate text hidden
+                }
+                //changes available moves to a different colour
+                btn[x, 5].BackColor = Color.Turquoise;
+                btn[x, 5].ForeColor = Color.Turquoise;
+            }
         }
     }
 }
