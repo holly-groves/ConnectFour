@@ -13,16 +13,22 @@ namespace ConnectFour
     public partial class ConnectFour : Form
     {   
 
+         
         Button[,] btn = new Button[7, 6]; //2d array of buttons for grid
-        int filledCollumns = 0; //to keep track moves available incase the board is filled up with no winner
+        int filledCollumns; //to keep track moves available incase the board is filled up with no winner
 
 
         //boolean variable to be accesed throughout to determine which players turn it is
-        bool redTurn = true;
+        bool redTurn;
+        bool gameFin;
         public ConnectFour()
         {
             InitializeComponent();
-            
+
+            filledCollumns = 0;
+            redTurn = true;
+            gameFin = false;
+               
             //initalise grid
             for (int x = 0; x < 7; x++)
             {
@@ -103,8 +109,9 @@ namespace ConnectFour
                     {
                         //end game with no winner
                         DialogResult result;
-                        result = MessageBox.Show("No valid moves left, the game is tied. Game will now close", "No Moves Left", MessageBoxButtons.OK, MessageBoxIcon.None);
-                        Close();
+                        result = MessageBox.Show("No valid moves left, the game is tied.", "No Moves Left", MessageBoxButtons.OK, MessageBoxIcon.None);
+                        btnPlayAgain.Visible = true; //makes play again button visible
+                        
                     }
                 }
             }
@@ -133,6 +140,11 @@ namespace ConnectFour
         private void ConnectFour_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnPlayAgain_Click(object sender, EventArgs e)
+        {
+            //restart game
         }
     }
 }
