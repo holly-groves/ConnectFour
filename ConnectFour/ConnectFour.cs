@@ -18,7 +18,7 @@ namespace ConnectFour
 
 
         //boolean variable to be accesed throughout to determine which players turn it is
-        public static bool redTurn = true;
+        bool redTurn = true;
         public ConnectFour()
         {
             InitializeComponent();
