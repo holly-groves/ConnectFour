@@ -16,9 +16,9 @@ namespace ConnectFour
         Button[,] btn = new Button[7, 6]; //2d array of buttons for grid
         int filledCollumns = 0; //to keep track moves available incase the board is filled up with no winner
 
+
         //boolean variable to be accesed throughout to determine which players turn it is
         public static bool redTurn = true;
-
         public ConnectFour()
         {
             InitializeComponent();
@@ -84,6 +84,7 @@ namespace ConnectFour
                 //button colour is changed to appropriate colour and turn is changed
                 colourChange((Button)sender);
 
+
                 //make button above button pressed change colour to show a new available move
                 string grdXY = ((Button)sender).Text;
                 string[] splitGrid = grdXY.Split(',');
@@ -107,9 +108,9 @@ namespace ConnectFour
                     }
                 }
 
-
          
-    }
+      }
+
             
         }
 
