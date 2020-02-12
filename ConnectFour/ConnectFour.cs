@@ -117,8 +117,6 @@ namespace ConnectFour
             }
         }
 
-
-
         void btnEvent_MouseEnter(object sender, EventArgs e)
         {
             if (((Button)sender).BackColor == Color.Turquoise)
@@ -164,8 +162,9 @@ namespace ConnectFour
         }
 
         private void btnPlayAgain_Click(object sender, EventArgs e)
-        {   
+        {
             //reset game variables
+            btnPlayAgain.Visible = false;
             filledCollumns = 0;
             redTurn = true;
 
