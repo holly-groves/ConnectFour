@@ -78,8 +78,22 @@ namespace ConnectFour
                     ((Button)sender).BackColor = Color.Yellow;
                     ((Button)sender).ForeColor = Color.Yellow;
                 }
-                redTurn = !redTurn; //changes to the other players turn  
-         //   }
+                redTurn = !redTurn; //changes to the other players turn 
+
+                //this displays the current player's turn
+                if (redTurn = !redTurn)
+                {
+                    label2.Visible = false;
+                    label3.Visible = true;
+                    redTurn = !redTurn;
+                }
+                else
+                {
+                    label3.Visible = false;
+                    label2.Visible = true;
+                    redTurn = !redTurn;
+                }
+            //   }
         }
 
 
@@ -111,7 +125,9 @@ namespace ConnectFour
                         DialogResult result;
                         result = MessageBox.Show("No valid moves left, the game is tied.", "No Moves Left", MessageBoxButtons.OK, MessageBoxIcon.None);
                         btnPlayAgain.Visible = true; //makes play again button visible
-                        
+                        //to make the turn label invisible
+                        label3.Visible = false;
+                        label2.Visible = false;
                     }
                 }
             }
