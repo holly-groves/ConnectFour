@@ -277,5 +277,10 @@ namespace ConnectFour
                 btn[x, 5].ForeColor = Color.Turquoise;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
