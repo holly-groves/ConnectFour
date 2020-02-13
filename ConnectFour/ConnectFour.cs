@@ -7,27 +7,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace ConnectFour
 {
     public partial class ConnectFour : Form
-    {   
+    {
 
-         
-        Button[,] btn = new Button[7, 6]; //2d array of buttons for grid
+        Button[,] btn = new Button[7, 6]; //2d array of Buttons for grid
         int filledCollumns; //to keep track moves available incase the board is filled up with no winner
+
 
 
         //boolean variable to be accesed throughout to determine which players turn it is
         bool redTurn;
- 
+
         public ConnectFour()
         {
             InitializeComponent();
 
+            //plays background music
+            SoundPlayer player = new SoundPlayer("sound.midi");
+            player.Play();
+
             filledCollumns = 0;
             redTurn = true;
-               
+
             //initalise grid
             for (int x = 0; x < 7; x++)
             {
@@ -60,52 +65,150 @@ namespace ConnectFour
                 btn[x, 5].BackColor = Color.Turquoise;
                 btn[x, 5].ForeColor = Color.Turquoise;
             }
+
         }
 
         //function to change the colour of a valid button, only to be called after a button is clicked
         void colourChange(object sender)
-        {           
-           // if (((Button)sender).BackColor == Color.BlueViolet) //if it is a valid move in the game context
+        {
+            // if (((Button)sender).BackColor == Color.BlueViolet) //if it is a valid move in the game context
             //{
-                if (redTurn == true) //when it is red players turn, button is changed to red
-                {
-                    ((Button)sender).BackColor = Color.Red;
-                    ((Button)sender).ForeColor = Color.Red;
-                }
-         
-                else //if it is yellow players turn then change button to yellow
-                {
-                    ((Button)sender).BackColor = Color.Yellow;
-                    ((Button)sender).ForeColor = Color.Yellow;
-                }
-                redTurn = !redTurn; //changes to the other players turn 
+            if (redTurn == true) //when it is red players turn, Button is changed to red
+            {
+                ((Button)sender).BackColor = Color.Red;
+                ((Button)sender).ForeColor = Color.Red;
+            }
 
-                //this displays the current player's turn
-                if (redTurn = !redTurn)
-                {
-                    label2.Visible = false;
-                    label3.Visible = true;
-                    redTurn = !redTurn;
-                }
-                else
-                {
-                    label3.Visible = false;
-                    label2.Visible = true;
-                    redTurn = !redTurn;
-                }
-            //   }
+            else //if it is yellow players turn then change Button to yellow
+            {
+                ((Button)sender).BackColor = Color.Yellow;
+                ((Button)sender).ForeColor = Color.Yellow;
+            }
+            winChecker(((Button)sender));
+            redTurn = !redTurn; //changes to the other players turn  
+                                //   }
+                                //this displays the current player's turn
+            if (redTurn == !redTurn)
+            {
+                label2.Visible = false;
+                label3.Visible = true;
+
+            }
+            else
+            {
+                label3.Visible = false;
+                label2.Visible = true;
+
+            }
+        }
+        //plays a sound for the win
+        SoundPlayer winSong;
+        void redWin()//Displays a message informing that red player has won and then closes the game
+        {
+            DialogResult redW;
+            //plays a win sound
+            winSong = new SoundPlayer("WinSoundEffect.wav");
+            winSong.Play();
+            redW = MessageBox.Show("Congratulations Red Player has won the game!", "Red Win!", MessageBoxButtons.OK, MessageBoxIcon.None);
+            //stops the sound
+            winSong.Stop();
+            Close();
+        }
+        void yellowWin() //Displays a message informing that yellow has won and then closes the game
+        {
+            DialogResult yellowW;
+            //plays a win sound
+            winSong = new SoundPlayer("WinSoundEffect.mp3");
+            winSong.Play();
+            yellowW = MessageBox.Show("Congratulations Yellow Player has won the game!", "Yellow Win!", MessageBoxButtons.OK, MessageBoxIcon.None);
+            //stops the sound
+            winSong.Stop();
+            Close();
         }
 
 
+        void winChecker(object sender) //checks entire btn grid for four red or yellow buttons in a row
+        {
+            for (int x = 0; x < 4; x++)//checks for a horizontal 4 in a row
+            {
+                for (int y = 0; y < 6; y++)
+                {
+                    if (btn[x, y].BackColor == Color.Red && btn[x + 1, y].BackColor == Color.Red && btn[x + 2, y].BackColor == Color.Red && btn[x + 3, y].BackColor == Color.Red)
+                    {
+                        redWin();
+                    }
+                    else if (btn[x, y].BackColor == Color.Yellow && btn[x + 1, y].BackColor == Color.Yellow && btn[x + 2, y].BackColor == Color.Yellow && btn[x + 3, y].BackColor == Color.Yellow)
+                    {
+                        yellowWin();
+                    }
+                }
+            }//HORIZONTAL CHECK END
+
+            for (int x = 0; x < 7; x++) //checks for a vertical four in a row
+            {
+                for (int y = 0; y < 3; y++)
+                {
+                    if (btn[x, y].BackColor == Color.Red && btn[x, y + 1].BackColor == Color.Red && btn[x, y + 2].BackColor == Color.Red && btn[x, y + 3].BackColor == Color.Red)
+                    {
+                        redWin();
+                    }
+                    else if (btn[x, y].BackColor == Color.Yellow && btn[x, y + 1].BackColor == Color.Yellow && btn[x, y + 2].BackColor == Color.Yellow && btn[x, y + 3].BackColor == Color.Yellow)
+                    {
+                        yellowWin();
+                    }
+                }
+            }//vertical check end
+
+            for (int x = 0; x < 4; x++)//checks for a win sloping upwards
+            {
+                for (int y = 5; y > 2; y--)
+                {
+                    if (btn[x, y].BackColor == Color.Red && btn[x + 1, y - 1].BackColor == Color.Red && btn[x + 2, y - 2].BackColor == Color.Red && btn[x + 3, y - 3].BackColor == Color.Red)
+                    {
+                        redWin();
+                    }
+                    else if (btn[x, y].BackColor == Color.Yellow && btn[x + 1, y - 1].BackColor == Color.Yellow && btn[x + 2, y - 2].BackColor == Color.Yellow && btn[x + 3, y - 3].BackColor == Color.Yellow)
+                    {
+                        yellowWin();
+                    }
+                }
+            }//diagonal up end
+
+            for (int x = 0; x < 4; x++) //checks for a four in a row sloping downward
+            {
+                for (int y = 0; y < 3; y++)
+                {
+                    if (btn[x, y].BackColor == Color.Red && btn[x + 1, y + 1].BackColor == Color.Red && btn[x + 2, y + 2].BackColor == Color.Red && btn[x + 3, y + 3].BackColor == Color.Red)
+                    {
+                        redWin();
+                    }
+                    else if (btn[x, y].BackColor == Color.Yellow && btn[x + 1, y + 1].BackColor == Color.Yellow && btn[x + 2, y + 2].BackColor == Color.Yellow && btn[x + 3, y + 3].BackColor == Color.Yellow)
+                    {
+                        yellowWin();
+                    }
+                }
+            }//diagonal down end
+        }
+
+
+
+
+
+
+
+
+
+
+
+
         void btnEvent_Click(object sender, EventArgs e)
-        {  
+        {
             if (((Button)sender).BackColor == Color.BlueViolet || ((Button)sender).BackColor == Color.PaleVioletRed || ((Button)sender).BackColor == Color.PaleGoldenrod)
             {
-                //button colour is changed to appropriate colour and turn is changed
+                //Button colour is changed to appropriate colour and turn is changed
                 colourChange((Button)sender);
 
-
-                //make button above button pressed change colour to show a new available move
+                //make Button above Button pressed change colour to show a new available move
                 string grdXY = ((Button)sender).Text;
                 string[] splitGrid = grdXY.Split(',');
                 int toChangeX = (Convert.ToInt32(splitGrid[0])) - 1;
@@ -115,6 +218,7 @@ namespace ConnectFour
                 {
                     btn[(toChangeX), (toChangeY - 1)].BackColor = Color.Turquoise;
                     btn[(toChangeX), (toChangeY - 1)].ForeColor = Color.Turquoise;
+
                 }
                 else //collumn where player placed a piece is now full
                 {
@@ -137,13 +241,12 @@ namespace ConnectFour
         {
             if (((Button)sender).BackColor == Color.Turquoise)
             {
-                if (redTurn == true)
+                if (redTurn == true) //if it is the red players turn, when the mouse hovers over a valid Button it will preview red
                 {
-
                     ((Button)sender).BackColor = Color.PaleVioletRed;
                     ((Button)sender).ForeColor = Color.PaleVioletRed;
                 }
-                else
+                else //if it is the yellow players turn, when the mouse hovers over a valid Button it will preview yellow
                 {
                     ((Button)sender).BackColor = Color.PaleGoldenrod;
                     ((Button)sender).ForeColor = Color.PaleGoldenrod;
@@ -164,8 +267,7 @@ namespace ConnectFour
                 ((Button)sender).ForeColor = Color.Turquoise;
             }
             if (((Button)sender).BackColor == Color.PaleGoldenrod)
-            { 
-            
+            {
                 ((Button)sender).BackColor = Color.Turquoise;
                 ((Button)sender).ForeColor = Color.Turquoise;
             }
@@ -197,5 +299,7 @@ namespace ConnectFour
                 btn[x, 5].ForeColor = Color.Turquoise;
             }
         }
+
+
     }
 }
