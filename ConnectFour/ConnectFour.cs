@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.Media; //to allow soundfile to be played
+using System.IO; //to get the .wav file path so it can be run on any machine
 
 namespace ConnectFour
 {
@@ -28,8 +29,11 @@ namespace ConnectFour
             InitializeComponent();
 
             //plays background music
-            SoundPlayer player = new SoundPlayer("sound.midi");
-            player.Play();
+            string sound = "sandstorm.wav";
+            string soundPath = Path.GetFullPath("sandstorm.wav");
+
+            SoundPlayer player = new SoundPlayer(soundPath);
+            player.PlayLooping();
 
             filledCollumns = 0;
             redTurn = true;
