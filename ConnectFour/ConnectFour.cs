@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.Media; //to allow soundfile to be played
+
 namespace ConnectFour
 {
     public partial class ConnectFour : Form
@@ -24,6 +26,10 @@ namespace ConnectFour
         public ConnectFour()
         {
             InitializeComponent();
+
+            //plays background music
+            SoundPlayer player = new SoundPlayer("sound.midi");
+            player.Play();
 
             filledCollumns = 0;
             redTurn = true;
