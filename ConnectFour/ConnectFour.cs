@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Media;
+
+using System.Media; //to allow soundfile to be played
 
 namespace ConnectFour
 {
@@ -21,7 +22,7 @@ namespace ConnectFour
 
         //boolean variable to be accesed throughout to determine which players turn it is
         bool redTurn;
-
+ 
         public ConnectFour()
         {
             InitializeComponent();
@@ -32,7 +33,7 @@ namespace ConnectFour
 
             filledCollumns = 0;
             redTurn = true;
-
+               
             //initalise grid
             for (int x = 0; x < 7; x++)
             {
@@ -63,9 +64,9 @@ namespace ConnectFour
 
                 //changes available moves to a different colour
                 btn[x, 5].BackColor = Color.Turquoise;
-                btn[x, 5].ForeColor = Color.Turquoise;
+                btn[x, 5].ForeColor = Color.Turquoise; 
             }
-
+            
         }
 
         //function to change the colour of a valid button, only to be called after a button is clicked
@@ -87,19 +88,6 @@ namespace ConnectFour
             winChecker(((Button)sender));
             redTurn = !redTurn; //changes to the other players turn  
                                 //   }
-                                //this displays the current player's turn
-            if (redTurn == !redTurn)
-            {
-                label2.Visible = false;
-                label3.Visible = true;
-
-            }
-            else
-            {
-                label3.Visible = false;
-                label2.Visible = true;
-
-            }
         }
         //plays a sound for the win
         SoundPlayer winSong;
@@ -140,7 +128,7 @@ namespace ConnectFour
                     else if (btn[x, y].BackColor == Color.Yellow && btn[x + 1, y].BackColor == Color.Yellow && btn[x + 2, y].BackColor == Color.Yellow && btn[x + 3, y].BackColor == Color.Yellow)
                     {
                         yellowWin();
-                    }
+                    } 
                 }
             }//HORIZONTAL CHECK END
 
@@ -155,7 +143,7 @@ namespace ConnectFour
                     else if (btn[x, y].BackColor == Color.Yellow && btn[x, y + 1].BackColor == Color.Yellow && btn[x, y + 2].BackColor == Color.Yellow && btn[x, y + 3].BackColor == Color.Yellow)
                     {
                         yellowWin();
-                    }
+                    }  
                 }
             }//vertical check end
 
@@ -207,7 +195,7 @@ namespace ConnectFour
             {
                 //Button colour is changed to appropriate colour and turn is changed
                 colourChange((Button)sender);
-
+                
                 //make Button above Button pressed change colour to show a new available move
                 string grdXY = ((Button)sender).Text;
                 string[] splitGrid = grdXY.Split(',');
@@ -218,7 +206,7 @@ namespace ConnectFour
                 {
                     btn[(toChangeX), (toChangeY - 1)].BackColor = Color.Turquoise;
                     btn[(toChangeX), (toChangeY - 1)].ForeColor = Color.Turquoise;
-
+                    
                 }
                 else //collumn where player placed a piece is now full
                 {
@@ -229,9 +217,7 @@ namespace ConnectFour
                         DialogResult result;
                         result = MessageBox.Show("No valid moves left, the game is tied.", "No Moves Left", MessageBoxButtons.OK, MessageBoxIcon.None);
                         btnPlayAgain.Visible = true; //makes play again button visible
-                        //to make the turn label invisible
-                        label3.Visible = false;
-                        label2.Visible = false;
+                        
                     }
                 }
             }
@@ -267,7 +253,7 @@ namespace ConnectFour
                 ((Button)sender).ForeColor = Color.Turquoise;
             }
             if (((Button)sender).BackColor == Color.PaleGoldenrod)
-            {
+            {     
                 ((Button)sender).BackColor = Color.Turquoise;
                 ((Button)sender).ForeColor = Color.Turquoise;
             }
@@ -300,6 +286,6 @@ namespace ConnectFour
             }
         }
 
-
+        
     }
 }
