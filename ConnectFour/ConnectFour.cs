@@ -27,9 +27,9 @@ namespace ConnectFour
         {
             InitializeComponent();
 
-            //plays background music
-            //SoundPlayer player = new SoundPlayer("sound.midi");
-           // player.Play();
+            plays background music
+            SoundPlayer player = new SoundPlayer("sound.midi");
+            player.Play();
 
             filledCollumns = 0;
             redTurn = true;
