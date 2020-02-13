@@ -27,7 +27,7 @@ namespace ConnectFour
         {
             InitializeComponent();
 
-            plays background music
+            //plays background music
             SoundPlayer player = new SoundPlayer("sound.midi");
             player.Play();
 
