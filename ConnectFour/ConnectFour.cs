@@ -29,9 +29,10 @@ namespace ConnectFour
             InitializeComponent();
 
             //plays background music
-            string sound = @"sandstorm.wav";
-            string soundPath = Path.GetFullPath(sound);
-            SoundPlayer player = new SoundPlayer(@"C:\Users\holly\Source\Repos\ConnectFour2\sandstorm.wav");
+            string sound = "sandstorm.wav";
+            string soundPath = Path.GetFullPath("sandstorm.wav");
+
+            SoundPlayer player = new SoundPlayer(soundPath);
             player.PlayLooping();
 
             filledCollumns = 0;
