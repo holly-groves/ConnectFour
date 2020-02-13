@@ -52,10 +52,73 @@
     <Compile Include="ConnectFour.Designer.cs">
       <DependentUpon>ConnectFour.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConnectFourStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConnectFourStart.Designer.cs">
+      <DependentUpon>ConnectFourStart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameInstructions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameInstructions.Designer.cs">
+      <DependentUpon>GameInstructions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DifficultyOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DifficultyOptions.Designer.cs">
+      <DependentUpon>DifficultyOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntervalOptionsVsComputer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntervalOptionsVsComputer.Designer.cs">
+      <DependentUpon>IntervalOptionsVsComputer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntervalOptionsVsPlayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntervalOptionsVsPlayer.Designer.cs">
+      <DependentUpon>IntervalOptionsVsPlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpponentOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpponentOptions.Designer.cs">
+      <DependentUpon>OpponentOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlayOptionsVsPlayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayOptionsVsPlayer.Designer.cs">
+      <DependentUpon>PlayOptionsVsPlayer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ConnectFour.resx">
       <DependentUpon>ConnectFour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConnectFourStart.resx">
+      <DependentUpon>ConnectFourStart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameInstructions.resx">
+      <DependentUpon>GameInstructions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DifficultyOptions.resx">
+      <DependentUpon>DifficultyOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntervalOptionsVsComputer.resx">
+      <DependentUpon>IntervalOptionsVsComputer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntervalOptionsVsPlayer.resx">
+      <DependentUpon>IntervalOptionsVsPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpponentOptions.resx">
+      <DependentUpon>OpponentOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayOptionsVsPlayer.resx">
+      <DependentUpon>PlayOptionsVsPlayer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -68,7 +68,7 @@ namespace ConnectFour
 
                 //changes available moves to a different colour
                 btn[x, 5].BackColor = Color.Turquoise;
-                btn[x, 5].ForeColor = Color.Turquoise;
+                btn[x, 5].ForeColor = Color.Turquoise; 
             }
             
         }
@@ -93,17 +93,28 @@ namespace ConnectFour
             redTurn = !redTurn; //changes to the other players turn  
                                 //   }
         }
-
+        //plays a sound for the win
+        SoundPlayer winSong;
         void redWin()//Displays a message informing that red player has won and then closes the game
         {
             DialogResult redW;
+            //plays a win sound
+            winSong = new SoundPlayer("WinSoundEffect.wav");
+            winSong.Play();
             redW = MessageBox.Show("Congratulations Red Player has won the game!", "Red Win!", MessageBoxButtons.OK, MessageBoxIcon.None);
+            //stops the sound
+            winSong.Stop();
             Close();
         }
         void yellowWin() //Displays a message informing that yellow has won and then closes the game
         {
             DialogResult yellowW;
+            //plays a win sound
+            winSong = new SoundPlayer("WinSoundEffect.mp3");
+            winSong.Play();
             yellowW = MessageBox.Show("Congratulations Yellow Player has won the game!", "Yellow Win!", MessageBoxButtons.OK, MessageBoxIcon.None);
+            //stops the sound
+            winSong.Stop();
             Close();
         }
 
@@ -199,6 +210,7 @@ namespace ConnectFour
                 {
                     btn[(toChangeX), (toChangeY - 1)].BackColor = Color.Turquoise;
                     btn[(toChangeX), (toChangeY - 1)].ForeColor = Color.Turquoise;
+                    
                 }
                 else //collumn where player placed a piece is now full
                 {
@@ -278,9 +290,11 @@ namespace ConnectFour
             }
         }
 
+
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
         }
+
     }
 }
