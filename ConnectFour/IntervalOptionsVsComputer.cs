@@ -90,7 +90,7 @@ namespace ConnectFour
         //this sets the time intervals based on the buttons clicked
         void BtnEvent_Click(object sender, EventArgs e)
         {
-            //ConnectFourTimedVsComputer game = new ConnectFourTimedVsComputer();
+            //ConnectFourTimedVsComputerEasy game = new ConnectFourTimedVsComputerEasy();
             //this splits the text within the button
             string time = ((Button)sender).Text;
             string[] split = time.Split(',');
@@ -99,13 +99,13 @@ namespace ConnectFour
             //this sets the interval to be used in the timed game
             if (interval != 1)
             {
-                //game = new ConnectFourTimedVsComputer(interval*1000);
+                //game = new ConnectFourTimedVsComputerEasy(interval*1000);
                 //game.Show();
                 //this.Hide();
             }
             else
             {
-                //game = new ConnectFourTimedVsComputer(interval*60*1000);
+                //game = new ConnectFourTimedVsComputerEasy(interval*60*1000);
                 //game.Show();
                 //this.Hide();
             }
