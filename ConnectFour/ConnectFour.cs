@@ -19,8 +19,6 @@ namespace ConnectFour
         Button[,] btn = new Button[7, 6]; //2d array of Buttons for grid
         int filledCollumns; //to keep track moves available incase the board is filled up with no winner
 
-
-        int compMove = 0;
         //boolean variable to be accesed throughout to determine which players turn it is
         bool redTurn;
  
@@ -302,7 +300,7 @@ namespace ConnectFour
         //function that places a random valid move depending on which colours turn it is
         void computerMove() {          
             Random rnd = new Random();
-            int x = rnd.Next(0,6);
+            int x = rnd.Next(0,7);
             for (int y = 0; y < 6; y++)
             {   
                 if (btn[x, y].BackColor == Color.Turquoise)

@@ -37,7 +37,7 @@ namespace ConnectFour
         //this closes the window
         private void ExitGame_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
         }
 
         
