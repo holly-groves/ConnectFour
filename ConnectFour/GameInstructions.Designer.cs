@@ -36,6 +36,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.exitGame = new System.Windows.Forms.Button();
+            this.mainMenu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -108,12 +110,38 @@
             this.label7.TabIndex = 20;
             this.label7.Text = "-If no winning connection is made it ends as a draw";
             // 
+            // exitGame
+            // 
+            this.exitGame.BackColor = System.Drawing.Color.Aqua;
+            this.exitGame.Font = new System.Drawing.Font("Showcard Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitGame.Location = new System.Drawing.Point(380, 317);
+            this.exitGame.Name = "exitGame";
+            this.exitGame.Size = new System.Drawing.Size(241, 105);
+            this.exitGame.TabIndex = 22;
+            this.exitGame.Text = "Exit Game";
+            this.exitGame.UseVisualStyleBackColor = false;
+            this.exitGame.Click += new System.EventHandler(this.ExitGame_Click);
+            // 
+            // mainMenu
+            // 
+            this.mainMenu.BackColor = System.Drawing.Color.Aqua;
+            this.mainMenu.Font = new System.Drawing.Font("Showcard Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainMenu.Location = new System.Drawing.Point(88, 317);
+            this.mainMenu.Name = "mainMenu";
+            this.mainMenu.Size = new System.Drawing.Size(241, 105);
+            this.mainMenu.TabIndex = 21;
+            this.mainMenu.Text = "Main Menu";
+            this.mainMenu.UseVisualStyleBackColor = false;
+            this.mainMenu.Click += new System.EventHandler(this.MainMenu_Click);
+            // 
             // GameInstructions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(739, 450);
+            this.Controls.Add(this.exitGame);
+            this.Controls.Add(this.mainMenu);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -141,5 +169,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button exitGame;
+        private System.Windows.Forms.Button mainMenu;
     }
 }
