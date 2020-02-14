@@ -35,15 +35,16 @@
             this.lblRed = new System.Windows.Forms.Label();
             this.lblYel = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
+            this.btn_Computer = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(148, 30);
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(16, 25);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(420, 70);
+            this.lblTitle.Size = new System.Drawing.Size(403, 69);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Connect Four";
             this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
@@ -52,7 +53,7 @@
             // 
             this.btnPlayAgain.BackColor = System.Drawing.Color.Aqua;
             this.btnPlayAgain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlayAgain.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlayAgain.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlayAgain.Location = new System.Drawing.Point(28, 613);
             this.btnPlayAgain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPlayAgain.Name = "btnPlayAgain";
@@ -67,7 +68,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.Aqua;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(569, 757);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
@@ -105,7 +106,7 @@
             // 
             this.btnExit.BackColor = System.Drawing.Color.Aqua;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Location = new System.Drawing.Point(451, 610);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(219, 53);
@@ -114,12 +115,26 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // btn_Computer
+            // 
+            this.btn_Computer.BackColor = System.Drawing.Color.Aqua;
+            this.btn_Computer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Computer.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
+            this.btn_Computer.Location = new System.Drawing.Point(451, 41);
+            this.btn_Computer.Name = "btn_Computer";
+            this.btn_Computer.Size = new System.Drawing.Size(219, 53);
+            this.btn_Computer.TabIndex = 5;
+            this.btn_Computer.Text = "Computer Move";
+            this.btn_Computer.UseVisualStyleBackColor = false;
+            this.btn_Computer.Click += new System.EventHandler(this.btn_Computer_Click);
+            // 
             // ConnectFour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(704, 681);
+            this.Controls.Add(this.btn_Computer);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblYel);
@@ -149,6 +164,7 @@
         private System.Windows.Forms.Label lblRed;
         private System.Windows.Forms.Label lblYel;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btn_Computer;
     }
 }
 
