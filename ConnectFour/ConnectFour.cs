@@ -19,6 +19,8 @@ namespace ConnectFour
         Button[,] btn = new Button[7, 6]; //2d array of Buttons for grid
         int filledCollumns; //to keep track moves available incase the board is filled up with no winner
 
+        SoundPlayer player = new SoundPlayer("sandstorm.wav"); //music
+
         //boolean variable to be accesed throughout to determine which players turn it is
         bool redTurn;
  
@@ -27,11 +29,8 @@ namespace ConnectFour
             InitializeComponent();
 
             //plays background music
-           // string sound = "sandstorm.wav";
-            //string soundPath = Path.GetFullPath("sandstorm.wav");
-
-           // SoundPlayer player = new SoundPlayer(soundPath);
-          //  player.PlayLooping();
+            
+            player.PlayLooping();
 
             filledCollumns = 0;
             redTurn = true;
@@ -283,7 +282,8 @@ namespace ConnectFour
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-           Application.Exit();
+            player.Stop();
+            Application.Exit();
         }
 
         private void lblTitle_Click(object sender, EventArgs e)
