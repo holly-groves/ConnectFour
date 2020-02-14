@@ -79,24 +79,24 @@
             // lblRed
             // 
             this.lblRed.AutoSize = true;
-            this.lblRed.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRed.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRed.ForeColor = System.Drawing.Color.Red;
             this.lblRed.Location = new System.Drawing.Point(278, 635);
             this.lblRed.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRed.Name = "lblRed";
-            this.lblRed.Size = new System.Drawing.Size(130, 34);
+            this.lblRed.Size = new System.Drawing.Size(135, 31);
             this.lblRed.TabIndex = 2;
             this.lblRed.Text = "Red Turn";
             // 
             // lblYel
             // 
             this.lblYel.AutoSize = true;
-            this.lblYel.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblYel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblYel.ForeColor = System.Drawing.Color.Yellow;
             this.lblYel.Location = new System.Drawing.Point(261, 604);
             this.lblYel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblYel.Name = "lblYel";
-            this.lblYel.Size = new System.Drawing.Size(167, 34);
+            this.lblYel.Size = new System.Drawing.Size(168, 31);
             this.lblYel.TabIndex = 3;
             this.lblYel.Text = "Yellow Turn";
             this.lblYel.Visible = false;
