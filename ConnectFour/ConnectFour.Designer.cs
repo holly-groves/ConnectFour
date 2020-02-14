@@ -32,8 +32,8 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnPlayAgain = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblRed = new System.Windows.Forms.Label();
+            this.lblYel = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -76,30 +76,30 @@
             this.button1.Text = "Exit";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // label2
+            // lblRed
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(278, 635);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 31);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Red Turn";
+            this.lblRed.AutoSize = true;
+            this.lblRed.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRed.ForeColor = System.Drawing.Color.Red;
+            this.lblRed.Location = new System.Drawing.Point(278, 635);
+            this.lblRed.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRed.Name = "lblRed";
+            this.lblRed.Size = new System.Drawing.Size(135, 31);
+            this.lblRed.TabIndex = 2;
+            this.lblRed.Text = "Red Turn";
             // 
-            // label3
+            // lblYel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Yellow;
-            this.label3.Location = new System.Drawing.Point(261, 604);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(168, 31);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Yellow Turn";
-            this.label3.Visible = false;
+            this.lblYel.AutoSize = true;
+            this.lblYel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblYel.ForeColor = System.Drawing.Color.Yellow;
+            this.lblYel.Location = new System.Drawing.Point(261, 604);
+            this.lblYel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblYel.Name = "lblYel";
+            this.lblYel.Size = new System.Drawing.Size(168, 31);
+            this.lblYel.TabIndex = 3;
+            this.lblYel.Text = "Yellow Turn";
+            this.lblYel.Visible = false;
             // 
             // btnExit
             // 
@@ -122,8 +122,8 @@
             this.ClientSize = new System.Drawing.Size(704, 681);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblYel);
+            this.Controls.Add(this.lblRed);
             this.Controls.Add(this.btnPlayAgain);
             this.Controls.Add(this.lblTitle);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -146,8 +146,8 @@
 
         private System.Windows.Forms.Button button1;
 
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblRed;
+        private System.Windows.Forms.Label lblYel;
         private System.Windows.Forms.Button btnExit;
     }
 }

@@ -82,19 +82,24 @@ namespace ConnectFour
             {
                 ((Button)sender).BackColor = Color.Red;
                 ((Button)sender).ForeColor = Color.Red;
+                lblRed.Visible = false;
+                lblYel.Visible = true;
             }
 
             else //if it is yellow players turn then change Button to yellow
             {
                 ((Button)sender).BackColor = Color.Yellow;
                 ((Button)sender).ForeColor = Color.Yellow;
+                lblRed.Visible = true;
+                lblYel.Visible = false;
             }
             winChecker(((Button)sender));
             redTurn = !redTurn; //changes to the other players turn  
                                 //   }
         }
+
         //plays a sound for the win
-        SoundPlayer winSong;
+        //SoundPlayer winSong;
         void redWin()//Displays a message informing that red player has won and then closes the game
         {
             DialogResult redW;
