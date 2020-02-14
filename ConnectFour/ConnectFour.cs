@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.Media; //to allow soundfile to be played
+using System.IO; //to get the .wav file path so it can be run on any machine
 
 namespace ConnectFour
 {
@@ -28,8 +29,11 @@ namespace ConnectFour
             InitializeComponent();
 
             //plays background music
-            SoundPlayer player = new SoundPlayer("sound.midi");
-            player.Play();
+           // string sound = "sandstorm.wav";
+            //string soundPath = Path.GetFullPath("sandstorm.wav");
+
+           // SoundPlayer player = new SoundPlayer(soundPath);
+          //  player.PlayLooping();
 
             filledCollumns = 0;
             redTurn = true;
@@ -78,40 +82,44 @@ namespace ConnectFour
             {
                 ((Button)sender).BackColor = Color.Red;
                 ((Button)sender).ForeColor = Color.Red;
+                lblRed.Visible = false;
+                lblYel.Visible = true;
             }
 
             else //if it is yellow players turn then change Button to yellow
             {
                 ((Button)sender).BackColor = Color.Yellow;
                 ((Button)sender).ForeColor = Color.Yellow;
+                lblRed.Visible = true;
+                lblYel.Visible = false;
             }
             winChecker(((Button)sender));
             redTurn = !redTurn; //changes to the other players turn  
-                                //   }
         }
+
         //plays a sound for the win
-        SoundPlayer winSong;
+        //SoundPlayer winSong;
         void redWin()//Displays a message informing that red player has won and then closes the game
         {
             DialogResult redW;
             //plays a win sound
-            winSong = new SoundPlayer("WinSoundEffect.wav");
-            winSong.Play();
-            redW = MessageBox.Show("Congratulations Red Player has won the game!", "Red Win!", MessageBoxButtons.OK, MessageBoxIcon.None);
+            //winSong = new SoundPlayer("WinSoundEffect.wav");
+            //winSong.Play();
+            redW = MessageBox.Show("Congratulations Red Player has won the game! The game will close", "Red Win!", MessageBoxButtons.OK, MessageBoxIcon.None);
             //stops the sound
-            winSong.Stop();
-            Close();
+            //winSong.Stop();
+            Application.Exit();
         }
         void yellowWin() //Displays a message informing that yellow has won and then closes the game
         {
             DialogResult yellowW;
             //plays a win sound
-            winSong = new SoundPlayer("WinSoundEffect.mp3");
-            winSong.Play();
-            yellowW = MessageBox.Show("Congratulations Yellow Player has won the game!", "Yellow Win!", MessageBoxButtons.OK, MessageBoxIcon.None);
+            // winSong = new SoundPlayer("WinSoundEffect.mp3");
+            // winSong.Play();
+            yellowW = MessageBox.Show("Congratulations Yellow Player has won the game! The game will close", "Yellow Win!", MessageBoxButtons.OK, MessageBoxIcon.None);
             //stops the sound
-            winSong.Stop();
-            Close();
+            // winSong.Stop();
+            Application.Exit();
         }
 
 
@@ -177,17 +185,6 @@ namespace ConnectFour
                 }
             }//diagonal down end
         }
-
-
-
-
-
-
-
-
-
-
-
 
         void btnEvent_Click(object sender, EventArgs e)
         {
@@ -286,6 +283,14 @@ namespace ConnectFour
             }
         }
 
-        
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+           Application.Exit();
+        }
+
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
