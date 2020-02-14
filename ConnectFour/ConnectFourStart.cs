@@ -41,12 +41,6 @@ namespace ConnectFour
                     }
                     else if (y == 2)
                     {
-                        btn[x, y].Text = "Most Wins";
-                        btn[x, y].Click += new EventHandler(this.BtnEvent_Click2);
-                        Controls.Add(btn[x, y]);
-                    }
-                    else if (y == 3)
-                    {
                         btn[x, y].Text = "Exit Game";
                         btn[x, y].Click += new EventHandler(this.BtnEvent_Click3);
                         Controls.Add(btn[x, y]);
@@ -93,7 +87,7 @@ namespace ConnectFour
         //to close the window
         void BtnEvent_Click3(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
         }
         //changes the colour of the button and it's text as the mouse enters
         void BtnEvent_MouseEnter(object sender, EventArgs e)
