@@ -29,11 +29,11 @@ namespace ConnectFour
             InitializeComponent();
 
             //plays background music
-            string sound = "sandstorm.wav";
-            string soundPath = Path.GetFullPath("sandstorm.wav");
+           // string sound = "sandstorm.wav";
+            //string soundPath = Path.GetFullPath("sandstorm.wav");
 
-            SoundPlayer player = new SoundPlayer(soundPath);
-            player.PlayLooping();
+           // SoundPlayer player = new SoundPlayer(soundPath);
+          //  player.PlayLooping();
 
             filledCollumns = 0;
             redTurn = true;
@@ -99,23 +99,23 @@ namespace ConnectFour
         {
             DialogResult redW;
             //plays a win sound
-            winSong = new SoundPlayer("WinSoundEffect.wav");
-            winSong.Play();
+            //winSong = new SoundPlayer("WinSoundEffect.wav");
+            //winSong.Play();
             redW = MessageBox.Show("Congratulations Red Player has won the game!", "Red Win!", MessageBoxButtons.OK, MessageBoxIcon.None);
             //stops the sound
-            winSong.Stop();
-            Close();
+            //winSong.Stop();
+            btnPlayAgain.Visible = true; //makes play again button visible
         }
         void yellowWin() //Displays a message informing that yellow has won and then closes the game
         {
             DialogResult yellowW;
             //plays a win sound
-            winSong = new SoundPlayer("WinSoundEffect.mp3");
-            winSong.Play();
+            // winSong = new SoundPlayer("WinSoundEffect.mp3");
+            // winSong.Play();
             yellowW = MessageBox.Show("Congratulations Yellow Player has won the game!", "Yellow Win!", MessageBoxButtons.OK, MessageBoxIcon.None);
             //stops the sound
-            winSong.Stop();
-            Close();
+            // winSong.Stop();
+            btnPlayAgain.Visible = true; //makes play again button visible
         }
 
 
@@ -181,17 +181,6 @@ namespace ConnectFour
                 }
             }//diagonal down end
         }
-
-
-
-
-
-
-
-
-
-
-
 
         void btnEvent_Click(object sender, EventArgs e)
         {
@@ -290,11 +279,14 @@ namespace ConnectFour
             }
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -71,7 +71,7 @@ namespace ConnectFour
                     }
 
                     //sets button text font
-                    btn[x, y].Font = new Font("Showcard Gothic", 20, FontStyle.Bold);
+                    btn[x, y].Font = new Font("Century Gothic", 20, FontStyle.Bold);
                     //sets button positioning
                     btn[x, y].FlatStyle = FlatStyle.Flat;
                     btn[x, y].Top += 100;
