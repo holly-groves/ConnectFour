@@ -95,7 +95,6 @@ namespace ConnectFour
             }
             winChecker(((Button)sender));
             redTurn = !redTurn; //changes to the other players turn  
-                                //   }
         }
 
         //plays a sound for the win
@@ -106,10 +105,10 @@ namespace ConnectFour
             //plays a win sound
             //winSong = new SoundPlayer("WinSoundEffect.wav");
             //winSong.Play();
-            redW = MessageBox.Show("Congratulations Red Player has won the game!", "Red Win!", MessageBoxButtons.OK, MessageBoxIcon.None);
+            redW = MessageBox.Show("Congratulations Red Player has won the game! The game will close", "Red Win!", MessageBoxButtons.OK, MessageBoxIcon.None);
             //stops the sound
             //winSong.Stop();
-            btnPlayAgain.Visible = true; //makes play again button visible
+            Application.Exit();
         }
         void yellowWin() //Displays a message informing that yellow has won and then closes the game
         {
@@ -117,10 +116,10 @@ namespace ConnectFour
             //plays a win sound
             // winSong = new SoundPlayer("WinSoundEffect.mp3");
             // winSong.Play();
-            yellowW = MessageBox.Show("Congratulations Yellow Player has won the game!", "Yellow Win!", MessageBoxButtons.OK, MessageBoxIcon.None);
+            yellowW = MessageBox.Show("Congratulations Yellow Player has won the game! The game will close", "Yellow Win!", MessageBoxButtons.OK, MessageBoxIcon.None);
             //stops the sound
             // winSong.Stop();
-            btnPlayAgain.Visible = true; //makes play again button visible
+            Application.Exit();
         }
 
 
@@ -286,7 +285,7 @@ namespace ConnectFour
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Close();
+           Application.Exit();
         }
 
         private void lblTitle_Click(object sender, EventArgs e)
