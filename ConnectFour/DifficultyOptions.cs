@@ -28,6 +28,8 @@ namespace ConnectFour
             //responsible for the effect on the button as the mouse enters and leaves
             easy.MouseEnter += new EventHandler(this.BtnEvent_MouseEnter);
             easy.MouseLeave += new EventHandler(this.BtnEvent_MouseLeave);
+            hard.MouseEnter += new EventHandler(this.BtnEvent_MouseEnter);
+            hard.MouseLeave += new EventHandler(this.BtnEvent_MouseLeave);
             previousOption.MouseEnter += new EventHandler(this.BtnEvent_MouseEnter);
             previousOption.MouseLeave += new EventHandler(this.BtnEvent_MouseLeave);
             previousOption.MouseEnter += new EventHandler(this.BtnEvent_MouseEnter);

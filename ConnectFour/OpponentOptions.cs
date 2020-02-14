@@ -74,7 +74,7 @@ namespace ConnectFour
         //changes the colour of the button and button text as the mouse leaves
         void BtnEvent_MouseLeave(object sender, EventArgs e)
         {
-            ((Button)sender).BackColor = Color.LightBlue;
+            ((Button)sender).BackColor = Color.Aqua;
             ((Button)sender).ForeColor = Color.Black;
         }
 

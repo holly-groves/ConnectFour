@@ -12,7 +12,6 @@ namespace ConnectFour
 {
     public partial class IntervalOptionsVsPlayer : Form
     {
-        Button[,] btn = new Button[1, 7];       // 2D array of buttons
         public IntervalOptionsVsPlayer()
         {
             InitializeComponent();
@@ -48,7 +47,7 @@ namespace ConnectFour
             //ConnctFourTimed game = new ConnectFourTimed();
             //splits the text within the buttons
             string time = ((Button)sender).Text;
-            string[] split = time.Split(',');
+            string[] split = time.Split(' ');
             int interval = (Convert.ToInt32(split[0]));
             //game = new ConnectFourTimed(interval*60*1000);
             //game.Show();
@@ -61,7 +60,7 @@ namespace ConnectFour
             //ConnctFourTimed game = new ConnectFourTimed();
             //splits the text within the buttons
             string time = ((Button)sender).Text;
-            string[] split = time.Split(',');
+            string[] split = time.Split(' ');
             int interval = (Convert.ToInt32(split[0]));
             //game = new ConnectFourTimed(interval*1000);
             //game.Show();
@@ -100,7 +99,7 @@ namespace ConnectFour
         //changes the colour of the button and button text as the mouse leaves
         void BtnEvent_MouseLeave(object sender, EventArgs e)
         {
-            ((Button)sender).BackColor = Color.LightBlue;
+            ((Button)sender).BackColor = Color.Aqua;
             ((Button)sender).ForeColor = Color.Black;
         }
 

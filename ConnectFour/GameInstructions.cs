@@ -22,6 +22,8 @@ namespace ConnectFour
             //responsible for the effect on the button as the mouse enters and leaves
             mainMenu.MouseEnter += new EventHandler(this.BtnEvent_MouseEnter);
             exitGame.MouseLeave += new EventHandler(this.BtnEvent_MouseLeave);
+            exitGame.MouseEnter += new EventHandler(this.BtnEvent_MouseEnter);
+            mainMenu.MouseLeave += new EventHandler(this.BtnEvent_MouseLeave);
         }
 
         //this redirects the window to the start page
