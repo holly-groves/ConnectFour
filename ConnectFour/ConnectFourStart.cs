@@ -36,8 +36,8 @@ namespace ConnectFour
         //this redirects to the opponent form
         private void StartGame_Click(object sender, EventArgs e)
         {
-            OpponentOptions options = new OpponentOptions();
-            options.Show();
+            ConnectFour game = new ConnectFour();
+            game.Show();
             this.Hide();
         }
 

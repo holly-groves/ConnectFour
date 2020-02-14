@@ -38,31 +38,36 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Showcard Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(65, 9);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(149, 9);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(382, 60);
+            this.label1.Size = new System.Drawing.Size(420, 70);
             this.label1.TabIndex = 0;
             this.label1.Text = "Connect Four";
             // 
             // exitGame
             // 
             this.exitGame.BackColor = System.Drawing.Color.Aqua;
-            this.exitGame.Font = new System.Drawing.Font("Showcard Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitGame.Location = new System.Drawing.Point(130, 339);
+            this.exitGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitGame.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitGame.Location = new System.Drawing.Point(173, 503);
+            this.exitGame.Margin = new System.Windows.Forms.Padding(4);
             this.exitGame.Name = "exitGame";
-            this.exitGame.Size = new System.Drawing.Size(270, 105);
+            this.exitGame.Size = new System.Drawing.Size(360, 129);
             this.exitGame.TabIndex = 6;
-            this.exitGame.Text = "Exit Game";
+            this.exitGame.Text = "Exit";
             this.exitGame.UseVisualStyleBackColor = false;
             // 
             // gameInstructions
             // 
             this.gameInstructions.BackColor = System.Drawing.Color.Aqua;
-            this.gameInstructions.Font = new System.Drawing.Font("Showcard Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gameInstructions.Location = new System.Drawing.Point(130, 228);
+            this.gameInstructions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gameInstructions.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gameInstructions.Location = new System.Drawing.Point(173, 281);
+            this.gameInstructions.Margin = new System.Windows.Forms.Padding(4);
             this.gameInstructions.Name = "gameInstructions";
-            this.gameInstructions.Size = new System.Drawing.Size(270, 105);
+            this.gameInstructions.Size = new System.Drawing.Size(360, 129);
             this.gameInstructions.TabIndex = 5;
             this.gameInstructions.Text = "Game Instructions";
             this.gameInstructions.UseVisualStyleBackColor = false;
@@ -70,25 +75,28 @@
             // startGame
             // 
             this.startGame.BackColor = System.Drawing.Color.Aqua;
-            this.startGame.Font = new System.Drawing.Font("Showcard Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startGame.Location = new System.Drawing.Point(130, 117);
+            this.startGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.startGame.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startGame.Location = new System.Drawing.Point(173, 144);
+            this.startGame.Margin = new System.Windows.Forms.Padding(4);
             this.startGame.Name = "startGame";
-            this.startGame.Size = new System.Drawing.Size(270, 105);
+            this.startGame.Size = new System.Drawing.Size(360, 129);
             this.startGame.TabIndex = 4;
             this.startGame.Text = "Start Game";
             this.startGame.UseVisualStyleBackColor = false;
             // 
             // ConnectFourStart
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.ClientSize = new System.Drawing.Size(530, 561);
+            this.ClientSize = new System.Drawing.Size(707, 690);
             this.Controls.Add(this.exitGame);
             this.Controls.Add(this.gameInstructions);
             this.Controls.Add(this.startGame);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ConnectFourStart";
             this.Text = "ConnectFour";
             this.Load += new System.EventHandler(this.ConnectFourStart_Load);
