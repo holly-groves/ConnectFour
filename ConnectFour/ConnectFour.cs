@@ -20,7 +20,7 @@ namespace ConnectFour
         int filledCollumns; //to keep track moves available incase the board is filled up with no winner
 
 
-
+        int compMove = 0;
         //boolean variable to be accesed throughout to determine which players turn it is
         bool redTurn;
  
@@ -291,6 +291,66 @@ namespace ConnectFour
         private void lblTitle_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_Computer_Click(object sender, EventArgs e)//when computer move button is clicked
+        {
+            computerMove();
+        }
+
+
+        //function that places a random valid move depending on which colours turn it is
+        void computerMove() {          
+            Random rnd = new Random();
+            int x = rnd.Next(0,6);
+            for (int y = 0; y < 6; y++)
+            {   
+                if (btn[x, y].BackColor == Color.Turquoise)
+                {
+                    if (redTurn == true) //when it is red players turn, Button is changed to red
+                    {
+                        btn[x,y].BackColor = Color.Red;
+                        btn[x,y].ForeColor = Color.Red;
+                        lblRed.Visible = false;
+                        lblYel.Visible = true;
+                    }
+
+                    else //if it is yellow players turn then change Button to yellow
+                    {
+                        btn[x,y].BackColor = Color.Yellow;
+                        btn[x,y].ForeColor = Color.Yellow;
+                        lblRed.Visible = true;
+                        lblYel.Visible = false;
+                    }
+                    winChecker(btn[x,y]);
+                    redTurn = !redTurn;
+                    //make Button above Button pressed change colour to show a new available move
+                    string grdXY = btn[x,y].Text;
+                    string[] splitGrid = grdXY.Split(',');
+                    int toChangeX = (Convert.ToInt32(splitGrid[0])) - 1;
+                    int toChangeY = (Convert.ToInt32(splitGrid[1])) - 1;
+                    Console.WriteLine(toChangeX + " " + toChangeY);
+                    if (toChangeY != 0)
+                    {
+                        btn[(toChangeX), (toChangeY - 1)].BackColor = Color.Turquoise;
+                        btn[(toChangeX), (toChangeY - 1)].ForeColor = Color.Turquoise;
+
+                    }
+                    else //collumn where player placed a piece is now full
+                    {
+                        filledCollumns++;
+                        if (filledCollumns == 7)  //all collumns are filled
+                        {
+                            //end game with no winner
+                            DialogResult result;
+                            result = MessageBox.Show("No valid moves left, the game is tied.", "No Moves Left", MessageBoxButtons.OK, MessageBoxIcon.None);
+                            btnPlayAgain.Visible = true; //makes play again button visible
+
+                        }
+                    }
+                }             
+            }
+            
         }
     }
 }
